@@ -1,6 +1,6 @@
 import MainMenu from "./pages/MainMenu";
 import Splash from "./pages/Splash";
-import Cart from "./pages/cart";
+import Cart from "./pages/Cart";
 
 
 const routes = [
