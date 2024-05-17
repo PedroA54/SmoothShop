@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ProductList from "../components/ProductList";
 import Search from "../components/Search";
 import NewProduct from "../components/NewProduct";
-
+import '../components/Style.css'; 
 
 
     function MainMenu() {
@@ -21,11 +21,11 @@ import NewProduct from "../components/NewProduct";
             <h1 className="main-title-menu">SmoothShop</h1>
             
             <Link to="/product/:id">
-                <Button className="shop-button">Checkout</Button>
+                <Button className="checkout-button">Checkout</Button>
             </Link>
             
             <Link to="/">
-                <Button className="smooth-shop">SmoothShop</Button>
+                <Button className="menu-smooth-shop-button">SmoothShop</Button>
             </Link>
             
             <Container>

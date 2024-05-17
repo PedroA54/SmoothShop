@@ -69,17 +69,20 @@ body {
     }
 }
 
-
+/* Titles for pages*/
 .main-title-menu {
     font-size: 75px; 
     color: black;
 }
 
-
 .main-title-cart{
     font-size: 75px; 
     color: black;
 }
+
+/*  ends here */
+
+
 
 .search-button {
     background-color: blue;
@@ -92,21 +95,6 @@ body {
     border: none;
 }
 
-
-.add-to-cart-button {
-    position: fixed;
-    bottom: 20px;
-    background-color: blue !important;
-    color: white !important;
-    padding: 10px 20px !important;
-    border-radius: 5px !important;
-    font-weight: bold !important;
-    font-size: 14px !important;
-    cursor: pointer !important;
-    border: none !important;
-    text-transform: none !important; 
-    text-align: center;
-}
 .cardContent-search {
     display: flex;
     flex-direction: column;
@@ -124,9 +112,43 @@ body {
     text-align: center;
     }
 
+.add-to-cart-button {
+    position: fixed;
+    bottom: 0px;
+    background-color: blue !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    border: none !important;
+    text-transform: none !important; 
+    text-align: center;
+}
+
 
 .button-wrapper {
         display: flex;
         justify-content: center;
     }
 
+
+/* Buttons for navigation */
+
+.menu-smooth-shop-button {
+    font-size: 20px !important; 
+}
+
+.checkout-smooth-shop-button {
+    font-size: 20px !important; 
+}
+
+.checkout-button  {
+    font-size: 20px !important; 
+}
+
+.shop-button {
+    font-size: 20px !important; 
+}
+/* ends here */
