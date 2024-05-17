@@ -6,68 +6,73 @@ body, h1, h2, h3, p, button {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Set a light background color for the body */
+/* Background for everything */
 body {
     background-color: lightblue; /* Light grey background color */
 }
 
+
+/* splash page */
 .splash-container {
-    display: flex; /* Set container as a flex container */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    height: 100vh; /* Make the container take up the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .splash-logo {
     max-width: 90%; 
     max-height: 90%;
-
     display: block;
     margin: 0 auto; 
 }
 
 .splash-title {
-    position: absolute; /* Use absolute positioning */
+    position: absolute;
     left: 50%;
     top: 2%; 
-    transform: translateX(-50%); /* Adjust for the width of the element */
-    font-family: 'Roboto', sans-serif; /* Use an elegant cursive font */
-    font-size: 5rem; /* Increase font size for a bolder appearance */
-    font-weight: 600; /* Increase font weight for prominence */
-    color: rgb(18, 15, 15); /* Text fill color for contrast against the background */
-    text-align: center; /* Center the text */
-    -webkit-text-stroke: 1px rgb(18, 17, 17); /* Text stroke in white for Chrome and Safari */
-    text-shadow: 2px 2px 5px rgba(228, 24, 24, 0.3); /* Add a subtle shadow for depth */
+    transform: translateX(-50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    color: rgb(18, 15, 15);
+    text-align: center;
+    -webkit-text-stroke: 1px rgb(18, 17, 17);
+    text-shadow: 2px 2px 5px rgba(228, 24, 24, 0.3);
 }
 
 .centered-button {
     position: fixed;
-    bottom: 50%; /* Position the button at the bottom of the screen */
-    left: 50%; /* Center the button horizontally */
-    transform: translateX(-50%); /* Adjust for the width of the button */
-    padding: 15px 30px; /* Adjusted padding for the button */
-    font-size: 1.5rem; /* Adjusted font size for the button */
-    background-color: blue; /* Original background color */
-    color: rgb(247, 243, 243); /* Original text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: blue;
+    color: rgb(247, 243, 243);
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
     text-align: center;
 }
 
 .centered-button:hover {
-    opacity: 0.9; /* Slightly dim the button on hover */
+    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
     .splash-logo {
-        max-width: 80%; /* Adjust logo size */
+        max-width: 80%; 
+    }
     }
 
     .centered-button {
-        font-size: 1rem; /* Adjust button size on smaller screens */
-    }
+        font-size: 1rem; 
 }
+
+/* splash page styling Ends here here */
+
+
 
 /* Titles for pages*/
 .main-title-menu {
@@ -83,6 +88,7 @@ body {
 /*  ends here */
 
 
+/* main menu page */
 
 .search-button {
     background-color: blue;
@@ -132,6 +138,9 @@ body {
         display: flex;
         justify-content: center;
     }
+
+/* ends here */
+
 
 
 /* Buttons for navigation */
