@@ -1,9 +1,23 @@
+/* Import a professional font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply the font to the body and text elements */
+body, h1, h2, h3, p, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Set a light background color for the body */
+body {
+    background-color: #f0f0f0; /* Light grey background color */
+}
+
 .splash-container {
     display: flex; /* Set container as a flex container */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
     height: 100vh; /* Make the container take up the full height of the viewport */
 }
+
 .splash-logo {
     max-width: 90%; 
     max-height: 90%;
@@ -11,6 +25,7 @@
     display: block;
     margin: 0 auto; 
 }
+
 .splash-title {
     position: absolute; /* Use absolute positioning */
     left: 50%;
@@ -19,21 +34,10 @@
     font-family: 'Caveat', cursive; /* Use an elegant cursive font */
     font-size: 5rem; /* Increase font size for a bolder appearance */
     font-weight: 600; /* Increase font weight for prominence */
-    color: rgb(243, 15, 15); /* Text fill color for contrast against the background */
+    color: rgb(18, 15, 15); /* Text fill color for contrast against the background */
     text-align: center; /* Center the text */
     -webkit-text-stroke: 1px rgb(18, 17, 17); /* Text stroke in white for Chrome and Safari */
     text-shadow: 2px 2px 5px rgba(228, 24, 24, 0.3); /* Add a subtle shadow for depth */
-}
-.elevate-text {
-    position: absolute;
-    left: 50%; 
-    top: 85%;
-    transform: translateX(-50%); /* Adjust for the width of the element */
-    font-family: 'Caveat', cursive; /* Use an elegant cursive font */
-    font-size: 2rem; /* Adjust the font size as desired */
-    color: rgb(245, 17, 17); /* Text fill color */
-    text-align: center; /* Center the text */
-    z-index: 2; /* Ensure the text is on top of the image */
 }
 
 .centered-button {
@@ -49,4 +53,29 @@
     border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     text-align: center;
+}
+
+/* Hover effect for the centered button */
+.centered-button:hover {
+    opacity: 0.9; /* Slightly dim the button on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .splash-logo {
+        max-width: 80%; /* Adjust logo size */
+    }
+
+    .centered-button {
+        font-size: 1rem; /* Adjust button size on smaller screens */
+    }
+}
+
+
+.main-title-menu {
+    font-size: 50px; /* You can adjust the value (e.g., 24px, 36px, etc.) to make the font bigger */
+}
+
+.main-title-cart{
+    font-size: 50px; /* You can adjust the value (e.g., 24px, 36px, etc.) to make the font bigger */
 }

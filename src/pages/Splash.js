@@ -11,7 +11,6 @@ function Splash() {
             <header>
                 <img src={logo} className="splash-logo" alt="logo" />
                 <h1 className="splash-title">SmoothShop</h1>
-                <h2 className="elevate-text">A Shopping Experience...with no bumps</h2>
             </header>
             <Link to="/shop">
                 <button className="centered-button">SHOP</button>
