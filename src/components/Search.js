@@ -1,6 +1,8 @@
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import AddToCart from './AddToCart';
+import './Style.css'; 
+
 
 
 
@@ -63,16 +65,7 @@ function Search() {
                 </select>
                 <button
                     onClick={searchProduct}
-                    style={{
-                        backgroundColor: '#D2B48C',
-                        color: 'white',
-                        padding: '10px 20px',
-                        borderRadius: '5px',
-                        fontWeight: 'bold',
-                        fontSize: '14px',
-                        cursor: 'pointer',
-                        border: 'none',
-                    }}
+                    className="search-button"
                 >
                     Search
                 </button>
@@ -84,9 +77,9 @@ function Search() {
                         height="200"
                         image={searchedProduct.image}
                         alt={searchedProduct.title}
-                        style={{ objectFit: 'contain' }}
+                        sx={{ objectFit: 'contain', padding: 1 }}
                     />
-                    <CardContent>
+                    <CardContent className="cardContent-search">
                         <Typography variant="h6">{searchedProduct.title}</Typography>
                         <Typography variant="body2" color="textSecondary">
                             {searchedProduct.category}

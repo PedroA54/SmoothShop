@@ -63,9 +63,13 @@ function NewProduct({ addProduct }) {
     return (
         <Container>
             {/* Button to toggle form visibility */}
-            <Button variant="contained" color="primary" onClick={toggleFormVisibility}>
-                {formVisible ? 'Hide Form' : 'Add Product'}
+            
+            <div className="button-wrapper">
+            <Button variant="contained" color="primary" onClick={toggleFormVisibility} >
+            {formVisible ? 'Hide Form' : 'Add Product'}
             </Button>
+            </div>
+
             {/* Conditionally render the form */}
             {formVisible && (
                 <Box component="form" onSubmit={handleSubmit} style={{ marginTop: '20px' }}>

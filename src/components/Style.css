@@ -8,7 +8,7 @@ body, h1, h2, h3, p, button {
 
 /* Set a light background color for the body */
 body {
-    background-color: #f0f0f0; /* Light grey background color */
+    background-color: lightblue; /* Light grey background color */
 }
 
 .splash-container {
@@ -31,7 +31,7 @@ body {
     left: 50%;
     top: 2%; 
     transform: translateX(-50%); /* Adjust for the width of the element */
-    font-family: 'Caveat', cursive; /* Use an elegant cursive font */
+    font-family: 'Roboto', sans-serif; /* Use an elegant cursive font */
     font-size: 5rem; /* Increase font size for a bolder appearance */
     font-weight: 600; /* Increase font weight for prominence */
     color: rgb(18, 15, 15); /* Text fill color for contrast against the background */
@@ -47,7 +47,7 @@ body {
     transform: translateX(-50%); /* Adjust for the width of the button */
     padding: 15px 30px; /* Adjusted padding for the button */
     font-size: 1.5rem; /* Adjusted font size for the button */
-    background-color: rgb(131, 9, 9); /* Original background color */
+    background-color: blue; /* Original background color */
     color: rgb(247, 243, 243); /* Original text color */
     border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
@@ -55,12 +55,10 @@ body {
     text-align: center;
 }
 
-/* Hover effect for the centered button */
 .centered-button:hover {
     opacity: 0.9; /* Slightly dim the button on hover */
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .splash-logo {
         max-width: 80%; /* Adjust logo size */
@@ -73,9 +71,62 @@ body {
 
 
 .main-title-menu {
-    font-size: 50px; /* You can adjust the value (e.g., 24px, 36px, etc.) to make the font bigger */
+    font-size: 75px; 
+    color: black;
 }
 
+
 .main-title-cart{
-    font-size: 50px; /* You can adjust the value (e.g., 24px, 36px, etc.) to make the font bigger */
+    font-size: 75px; 
+    color: black;
 }
+
+.search-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+
+.add-to-cart-button {
+    position: fixed;
+    bottom: 20px;
+    background-color: blue !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    border: none !important;
+    text-transform: none !important; 
+    text-align: center;
+}
+.cardContent-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    }
+
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    }
+
+
+.button-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
