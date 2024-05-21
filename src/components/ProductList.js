@@ -28,6 +28,7 @@ function Product({ product }) {
   );
 }
 
+
 function ProductList({ selectedProduct, productList, setProductList }) {
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")

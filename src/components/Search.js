@@ -1,29 +1,33 @@
-import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+import { Card, CardMedia, CardContent, Typography, CircularProgress, Alert, Button, Grid } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import AddToCart from './AddToCart';
-import './Style.css'; 
-
-
-
+import './Style.css';
 
 function Search() {
-    const [products, setProducts] = useState([]); //uses state to managage .. holds array fetched from api
-    const [selectedProduct, setSelectedProduct] = useState(''); //uses state to track of selected products on dropdown
-    const [searchedProduct, setSearchedProduct] = useState(null); //uses state to managage  to store product
-    
-    // Fetch products from the API
+    const [products, setProducts] = useState([]);
+    const [selectedProduct, setSelectedProduct] = useState('');
+    const [searchedProduct, setSearchedProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error('Error fetching products:', error));
-    }, []); // This hook ensures that the API call is made only once when the component mounts, due to the empty dependency array
-    
-    // Function to handle search button click
+            .then(data => {
+                setProducts(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching products:', error);
+                setError('Error fetching products.');
+                setLoading(false);
+            });
+    }, []);
+
     const searchProduct = () => {
-        if (selectedProduct) { // ofproduct is selected 
-            const product = products.find(product => product.id === parseInt(selectedProduct)); //then looks for that product in products using the endpoint products
-            if (product) { //if product is found it will update searched product
+        if (selectedProduct) {
+            const product = products.find(product => product.id === parseInt(selectedProduct));
+            if (product) {
                 setSearchedProduct(product);
             } else {
                 alert('Product not found.');
@@ -32,13 +36,21 @@ function Search() {
             alert('Please select a product from the dropdown.');
         }
     };
-    
+
+    if (loading) {
+        return <CircularProgress />;
+    }
+
+    if (error) {
+        return <Alert severity="error">{error}</Alert>;
+    }
+
     return (
         <>
-            
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-            
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <label htmlFor="product-select" style={{ marginRight: '10px' }}>Select a product:</label>
                 <select
+                    id="product-select"
                     value={selectedProduct}
                     onChange={e => setSelectedProduct(e.target.value)}
                     style={{
@@ -63,33 +75,39 @@ function Search() {
                         </option>
                     ))}
                 </select>
-                <button
+                <Button
+                    variant="contained"
+                    color="primary"
                     onClick={searchProduct}
                     className="search-button"
                 >
                     Search
-                </button>
+                </Button>
             </div>
             {searchedProduct && (
-                <Card style={{ backgroundColor: 'white', marginTop: '20px', padding: '20px' }}>
-                    <CardMedia
-                        component="img"
-                        height="200"
-                        image={searchedProduct.image}
-                        alt={searchedProduct.title}
-                        sx={{ objectFit: 'contain', padding: 1 }}
-                    />
-                    <CardContent className="cardContent-search">
-                        <Typography variant="h6">{searchedProduct.title}</Typography>
-                        <Typography variant="body2" color="textSecondary">
-                            {searchedProduct.category}
-                        </Typography>
-                        <Typography variant="h6" color="textPrimary" style={{ marginTop: '10px' }}>
-                            ${searchedProduct.price}
-                        </Typography>
-                        <AddToCart id={searchedProduct.id} />
-                    </CardContent>
-                </Card>
+                <Grid container justifyContent="center">
+                    <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+                        <Card sx={{ backgroundColor: 'white', p: 2 }}>
+                            <CardMedia
+                                component="img"
+                                height="200"
+                                image={searchedProduct.image}
+                                alt={searchedProduct.title}
+                                sx={{ objectFit: 'contain', p: 1 }}
+                            />
+                            <CardContent className="cardContent-search">
+                                <Typography variant="h6">{searchedProduct.title}</Typography>
+                                <Typography variant="body2" color="textSecondary">
+                                    {searchedProduct.category}
+                                </Typography>
+                                <Typography variant="h6" color="textPrimary" sx={{ mt: 1 }}>
+                                    ${searchedProduct.price}
+                                </Typography>
+                                <AddToCart id={searchedProduct.id} />
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
             )}
         </>
     );
